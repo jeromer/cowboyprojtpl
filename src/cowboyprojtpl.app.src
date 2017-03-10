@@ -1,0 +1,38 @@
+{application, cowboyprojtpl, [
+    {description, "some description"},
+
+    {vsn, "git"},
+    % "git" will automatically replaced by the current git revision
+    % ref : https://github.com/ninenines/erlang.mk/blob/master/core/erlc.mk#L269
+    {id, "git"},
+
+    {modules, []},
+    {mod, {cowboyprojtpl_app, []}},
+
+    {registered, [
+        cowboyprojtpl_sup
+    ]},
+
+    {applications, [
+        kernel,
+        stdlib,
+        lager,
+        statsderl,
+        pgsql,
+        cowboy
+    ]},
+
+    {env, [
+        {http, [
+            {port, 8080}
+        ]},
+
+        {db, [
+            {host, "localhost"},
+            {port, 5432},
+            {database, "postgres"},
+            {user, "postgres"},
+            {password, ""}
+        ]}
+    ]}
+]}.

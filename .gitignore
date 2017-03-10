@@ -1,0 +1,6 @@
+deps/
+log/
+logs/
+.erlang.mk/
+*.d
+ebin
